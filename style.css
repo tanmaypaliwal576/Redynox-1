@@ -13,10 +13,26 @@
   --gradient: linear-gradient(90deg, #a855f7, #ec4899, #f97316);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #0f0f0f;
   color: #e5e5e5;
   line-height: 1.7;
+  animation: fadeInPage 0.6s ease;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .container {
@@ -53,13 +69,29 @@ nav ul {
 }
 
 nav a {
+  position: relative;
   text-decoration: none;
   color: #aaa;
-  transition: 0.3s ease;
   font-weight: 500;
+  transition: 0.3s ease;
 }
 
-nav a:hover,
+/* Premium underline hover */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -6px;
+  background: var(--gradient);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
 nav a.active {
   background: var(--gradient);
   -webkit-background-clip: text;
@@ -112,7 +144,7 @@ nav a.active {
 
 .btn:hover {
   transform: translateY(-4px);
-  opacity: 0.9;
+  box-shadow: 0 12px 30px rgba(168, 85, 247, 0.25);
 }
 
 /* ==================================
@@ -174,6 +206,7 @@ nav a.active {
   background: linear-gradient(#151515, #151515) padding-box,
               var(--gradient) border-box;
   border: 1px solid transparent;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* ==================================
@@ -265,44 +298,8 @@ footer {
 }
 
 /* ==================================
-   RESPONSIVE
+   CONTACT SECTION (Your Added Fix)
 ================================== */
-
-@media (max-width: 768px) {
-
-  .hero h2 {
-    font-size: 32px;
-  }
-
-  .page-hero h2 {
-    font-size: 28px;
-  }
-
-  .cards,
-  .contact-grid,
-  .stats-grid {
-    flex-direction: column;
-  }
-
-  nav ul {
-    gap: 15px;
-  }
-
-  .features,
-  .stats,
-  .cta-section,
-  .team-section,
-  .journey-section,
-  .office-section,
-  .content-section {
-    padding: 70px 0;
-  }
-
-}
-
-/* ======================================================
-   🔥 ADDED CONTACT FIX (APPENDED — OLD CSS NOT CHANGED)
-====================================================== */
 
 .contact-section {
   padding: 60px 0;
@@ -321,6 +318,12 @@ footer {
   padding: 35px;
   border-radius: 12px;
   border: 1px solid #222;
+  transition: 0.3s ease;
+}
+
+.contact-info:hover,
+.contact-form:hover {
+  transform: translateY(-6px);
 }
 
 .contact-info p {
@@ -352,8 +355,38 @@ form textarea:focus {
   outline: none;
 }
 
+/* ==================================
+   RESPONSIVE
+================================== */
+
 @media (max-width: 768px) {
+
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .page-hero h2 {
+    font-size: 28px;
+  }
+
+  .cards,
+  .contact-grid,
+  .stats-grid,
   .contact-wrapper {
     flex-direction: column;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .features,
+  .stats,
+  .cta-section,
+  .team-section,
+  .journey-section,
+  .office-section,
+  .content-section {
+    padding: 70px 0;
   }
 }
