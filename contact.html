@@ -31,6 +31,7 @@
 <section class="contact-section">
   <div class="container contact-wrapper">
 
+    <!-- Contact Info -->
     <div class="contact-info">
       <h3>Contact Information</h3>
       <p>Email: contact@novatech.com</p>
@@ -38,24 +39,37 @@
       <p>Location: Indore, India</p>
     </div>
 
+    <!-- Contact Form -->
     <div class="contact-form">
       <h3>Send a Message</h3>
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="4" placeholder="Your Message" required></textarea>
+
+      <form id="contactForm">
+
+        <input type="text" id="name" placeholder="Your Name">
+        <small class="error" id="nameError"></small>
+
+        <input type="email" id="email" placeholder="Your Email">
+        <small class="error" id="emailError"></small>
+
+        <textarea rows="4" id="message" placeholder="Your Message"></textarea>
+        <small class="error" id="messageError"></small>
+
         <button type="submit" class="btn">Send Message</button>
+
+        <p id="successMessage" class="success"></p>
+
       </form>
     </div>
 
   </div>
 </section>
 
-
-
 <footer>
   <p>© 2026 NovaTech. All rights reserved.</p>
 </footer>
+
+<!-- Link JavaScript -->
+<script src="script.js"></script>
 
 </body>
 </html>

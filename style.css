@@ -390,3 +390,16 @@ form textarea:focus {
     padding: 70px 0;
   }
 }
+
+.error {
+  color: #f87171;
+  font-size: 13px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.success {
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 500;
+}
