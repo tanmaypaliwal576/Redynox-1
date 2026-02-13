@@ -12,7 +12,7 @@ A modern dark-themed responsive website built using HTML and CSS.
 - Deployed on Netlify
 
 ## Live Demo
-https://your-netlify-link.netlify.app
+https://nova-tech-web.netlify.app/
 
 ## Tech Used
 - HTML5
